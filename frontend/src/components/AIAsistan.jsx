@@ -1,15 +1,12 @@
+// eslint-disable-next-line
+/* eslint-disable import/no-anonymous-default-export */
+
 import React, { useState } from "react";
 import { playSnapSound } from "../utils/sounds";
 
 // Optional Lottie import - guarded fallback
-let Lottie, snapLogo;
-try {
-  Lottie = (await import("lottie-react")).default;
-  snapLogo = (await import("../assets/ai-snap-logo.json")).default;
-} catch (e) {
-  Lottie = null;
-  snapLogo = null;
-}
+import Lottie from "lottie-react";
+import snapLogo from "../assets/ai-snap-logo.json";
 
 const AIAsistan = ({ onSnap, t }) => {
   const [glow, setGlow] = useState(false);
