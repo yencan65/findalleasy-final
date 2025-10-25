@@ -1,0 +1,26 @@
+# Deploy Instructions — Findalleasy Final
+
+## 1) GitHub
+- Create repo: findalleasy-final
+- Upload all files from this zip
+
+## 2) Render (Monorepo — 2 services)
+A) Frontend (Static Site)
+ - Root: /frontend
+ - Build Command: npm install && npm run build
+ - Publish Directory: dist
+ - Environment: add VITE_API_BASE to point to your backend URL (e.g., https://findalleasy-final-api.onrender.com)
+
+B) Backend (Web Service)
+ - Root: /backend
+ - Start Command: npm install && npm start
+ - Environment variables: STRIPE_* , IYZICO_*
+
+## 3) Domain (Cloudflare / Namecheap)
+ - A or CNAME record to your Render frontend URL
+ - Example: CNAME findalleasy.com -> your-frontend.onrender.com
+
+## 4) Notes
+ - Lottie file is included as a simple placeholder (assets/ai-snap-logo.json).
+ - Audio file snap.wav included.
+ - AI assistant bubble supports i18n (tr/en examples). Add more langs in frontend/src/lang/.
