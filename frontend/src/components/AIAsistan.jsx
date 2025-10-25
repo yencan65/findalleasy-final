@@ -1,12 +1,8 @@
-// eslint-disable-next-line
-/* eslint-disable import/no-anonymous-default-export */
-
+// frontend/src/components/AIAsistan.jsx
 import React, { useState } from "react";
-import { playSnapSound } from "../utils/sounds";
-
-// Optional Lottie import - guarded fallback
 import Lottie from "lottie-react";
 import snapLogo from "../assets/ai-snap-logo.json";
+import { playSnapSound } from "../utils/sounds";
 
 const AIAsistan = ({ onSnap, t }) => {
   const [glow, setGlow] = useState(false);
@@ -36,11 +32,7 @@ const AIAsistan = ({ onSnap, t }) => {
 
       {/* Logo container */}
       <div className="relative w-16 h-16 bg-[#0F172A]/80 backdrop-blur-sm rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-all duration-300">
-        {Lottie && snapLogo ? (
-          <Lottie animationData={snapLogo} loop={false} />
-        ) : (
-          <span className="text-2xl">✨</span>
-        )}
+        <Lottie animationData={snapLogo} loop={false} />
       </div>
 
       {/* Label */}
@@ -52,7 +44,9 @@ const AIAsistan = ({ onSnap, t }) => {
       {open && (
         <div className="absolute bottom-24 right-0 bg-[#0F172A]/90 text-[#CDAA7D] text-xs px-4 py-3 rounded-xl shadow-lg border border-[#CDAA7D]/40 backdrop-blur-sm w-56 animate-fade-in">
           <p>👋 {t("welcome")}</p>
-          <p className="mt-1">{t("suggestion", { item: "Akıllı Saat ⌚" })}</p>
+          <p className="mt-1">
+            {t("suggestion", { item: "Akıllı Saat ⌚ veya Otel Rezervasyonu" })}
+          </p>
           <button className="mt-2 w-full py-2 rounded-lg bg-[#CDAA7D] text-slate-900 font-semibold">
             {t("cta")}
           </button>
