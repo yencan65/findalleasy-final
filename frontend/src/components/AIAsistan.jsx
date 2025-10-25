@@ -1,7 +1,7 @@
 // frontend/src/components/AIAsistan.jsx
 import React, { useState } from "react";
 import Lottie from "lottie-react";
-import snapLogo from "../assets/ai-snap-logo.json";
+import snapLogo from "../../assets/ai-snap-logo.json";
 import { playSnapSound } from "../utils/sounds";
 
 const AIAsistan = ({ onSnap, t }) => {
